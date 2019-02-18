@@ -1,12 +1,33 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
+    "pages/count-down/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffa07a",
+    "navigationBarTitleText": "ONE备忘录",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#ffa07a",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/egg2.png",
+        "selectedIconPath": "images/two.jpg",
+        "text": "备忘录"
+      },
+      {
+        "pagePath": "pages/count-down/index",
+        "iconPath": "images/egg.png",
+        "selectedIconPath": "images/one.jpg",
+        "text": "倒数日"
+      }
+    ]
   }
 }

@@ -1,21 +1,80 @@
-/**index.wxss**/
-.userinfo {
+/* 头部 */
+
+.header {
+  text-align: center;
+  font-size: 40rpx;
+  color: #ae9e84;
+  margin-bottom: 40px;
+  width: 100%;
+  position: relative;
+  height: 50px;
+  padding: 60rpx 0 0 0;
+}
+
+.header::after {
+  content: "日理ONE机";
+  position: absolute;
+  bottom: -100rpx;
+  left: 0;
+  font-size: 120rpx;
+  text-align: center;
+  width: 100%;
+  color: rgba(225, 225, 225, 0.5);
+  z-index: 1;
+}
+
+/* 输入区域 */
+
+.input-warp {
+  margin: 30rpx 10rpx;
+}
+
+.input-warp .ipt-main {
+  border: 1px solid #e1e1e1;
+  height: 100rpx;
+  width: 610rpx;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.flex-row {
   display: flex;
-  flex-direction: column;
+  margin: 10rpx 0;
+  width: 670rpx;
+  -webkit-box-pack: justify;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.pick-date {
+  flex: 1;
+  vertical-align: middle;
+  margin-top: 10rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.date {
+  color: #777;
+  font-size: 32rpx;
+  /* text-indent: 40rpx; */
 }
 
-.usermotto {
-  margin-top: 200px;
+.btn {
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  background: #ffa07a;
+  display: block;
+}
+
+.btn-submit {
+  color: #fff;
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.btn-hover {
+  background: #ffa02b;
+}
+
+.btn-cancel {
+  background: #ffa07a;
 }

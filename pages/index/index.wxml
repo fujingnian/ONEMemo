@@ -1,13 +1,33 @@
 <!--index.wxml-->
+<!-- 备忘录部分第一行文本 -->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+
+  <view bindtap="bindViewTap" class="header">
+    <text class="userInfo-nickName" wx:if="{{hasUserInfo}}">欢迎{{userInfo.nickName}}使用</text>
+    <text class="log" wx:else>ONE备忘录</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+
+    <!-- 输入框 -->
+    <view class="input-warp">
+      <input type="text" value="{{newLi.content}}" returnKeyType="send" placeholder="请输入待做的事" class="ipt-main" bindinput="iptChange"></input>
+      <view class="flex-row flex-time"  wx:if="{{newLi.content}}">
+        <picker mode="date" value="{{newLi.begin}}" start="1949-10-01" end="2099-12-30" bindchange="bindDateChange" class="pick-date date">
+          <view class="picker">
+            请选择日期：{{newLi.begin}}
+          </view>
+        </picker>
+      </view>
+      <view class="flex-row" wx:if="{{newLi.content}}">        
+        <button class="btn btn-submit" formType="submit" hover-class="btn-hover">提交</button>
+        <button class="btn btn-cancel" formType="reset" hover-class="btn-hover">清空</button>
+      </view>
+    </view>
+
+  </form>
+
+  <view class="list-warp" wx:if="{{lists.legth > 0}}">
+    <view wx:for="{{lists}}" wx:key="{{done}}" wx:if="{{showAll || (!showAll && !item.done)}}" id="{{item.id}}" class="item.done ? 'done list' : 'list'">
+    </view>
   </view>
 </view>
